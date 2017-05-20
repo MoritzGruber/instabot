@@ -33,9 +33,6 @@ def search():
 
 search()
 
-print('Result: ' + str(setOfTags))
-
-
 class SetEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, set):
@@ -44,3 +41,5 @@ class SetEncoder(json.JSONEncoder):
 
 with open('related.json', 'w') as f:
     json.dump(setOfTags, f, cls=SetEncoder)
+
+print('Results saved to related.json files')
