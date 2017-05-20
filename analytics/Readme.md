@@ -11,3 +11,6 @@ Each result hashtags should contain follow information:
 ### Status
 
 Experimenting with the offical instagram api
+    -> Problem: Api in sandbox mode is pretty much usless
+    -> Going Live: To get out of Sandbox mode, you need to submit your app for review. If your app falls into the approved use cases and gets approved, it will automatically go live. At this point any Instagram user will be able to authorize your app, but you will have access only to the permissions that you were granted during the review. If you need access to more permissions, you can submit for review again and you will not lose access to the permissions that you have already been granted.
+

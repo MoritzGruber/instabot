@@ -1,0 +1,41 @@
+{
+    "name": "mgp25/instagram-api",
+    "description": "Instagram private API PHP",
+    "license": "MIT",
+    "keywords": [
+        "Instagram",
+        "Private",
+        "API",
+        "PHP"
+    ],
+    "support": {
+        "issues": "https://github.com/mgp25/Instagram-php/issues",
+        "wiki": "https://github.com/mgp25/Instagram-php/wiki",
+        "source": "https://github.com/mgp25/Instagram-php"
+    },
+    "authors": [
+        {
+            "name": "mgp25",
+            "email": "me@mgp25.com",
+            "role": "Founder"
+        },
+        {
+            "name": "SteveJobzniak",
+            "homepage": "https://github.com/SteveJobzniak",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "InstagramAPI\\": "src/"
+        }
+    },
+    "require": {
+        "netresearch/jsonmapper": "^1.0",
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "^6.2",
+        "ext-curl": "*",
+        "ext-gd": "*",
+        "ext-exif": "*"
+    }
+}
