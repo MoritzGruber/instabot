@@ -13,10 +13,12 @@ def search():
     while (True):
         # 1
         for tag in tmpNextSet:
+            time.sleep(0.1)
             relatedTags = subprocess.check_output(["php", "phpapi/main.php", tag])
+            print (relatedTags)
             arrayOfTags = str.split(relatedTags)
             for element in arrayOfTags:
-                setOfTags.add(element)
+                setOfTags.add('#'+element)
                 percentage = ((float(setOfTags.__len__()) / float(sys.argv[2])) * 100)
                 print("Status: " + "{:.0f}".format(percentage) + "%  -  " + str(setOfTags.__len__()) + "/" + str(
                     sys.argv[2]) + " Hashtags")
