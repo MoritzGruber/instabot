@@ -13,7 +13,7 @@ def search():
     while (True):
         # 1
         for tag in tmpNextSet:
-            relatedTags = subprocess.check_output(["php", "phpapi/test.php", tag])
+            relatedTags = subprocess.check_output(["php", "phpapi/main.php", tag])
             arrayOfTags = str.split(relatedTags)
             for element in arrayOfTags:
                 setOfTags.add(element)
@@ -39,7 +39,7 @@ class SetEncoder(json.JSONEncoder):
             return list(obj)
         return json.JSONEncoder.default(self, obj)
 
-with open('related.json', 'w') as f:
+with open('hashtags.json', 'w') as f:
     json.dump(setOfTags, f, cls=SetEncoder)
 
-print('Results saved to related.json files')
+print('Results saved to hashtags.json file')
