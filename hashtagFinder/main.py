@@ -4,7 +4,8 @@ import json
 import time
 
 setOfTags = set()
-setOfTags.add(sys.argv[1])
+
+setOfTags.add("#"+sys.argv[1])
 
 
 # for _ in range(int(sys.argv[2])):
@@ -14,11 +15,11 @@ def search():
         # 1
         for tag in tmpNextSet:
             time.sleep(0.1)
-            relatedTags = subprocess.check_output(["php", "phpapi/main.php", tag])
-            print (relatedTags)
+            relatedTags = subprocess.check_output(["php", "phpapi/main.php", tag[1:]])
             arrayOfTags = str.split(relatedTags)
+            print relatedTags
             for element in arrayOfTags:
-                setOfTags.add('#'+element)
+                setOfTags.add("#" + element)
                 percentage = ((float(setOfTags.__len__()) / float(sys.argv[2])) * 100)
                 print("Status: " + "{:.0f}".format(percentage) + "%  -  " + str(setOfTags.__len__()) + "/" + str(
                     sys.argv[2]) + " Hashtags")
@@ -34,6 +35,7 @@ def search():
 
 
 search()
+
 
 class SetEncoder(json.JSONEncoder):
     def default(self, obj):

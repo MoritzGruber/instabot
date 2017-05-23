@@ -1,5 +1,8 @@
 #Own stuff
 samples/
+uploadImage/images
+*/*.jpg
+uplaodImage/images/
 
 #Predefined python stuff...
 # Byte-compiled / optimized / DLL files
