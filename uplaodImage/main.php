@@ -3,14 +3,18 @@ set_time_limit(0);
 date_default_timezone_set('UTC');
 require __DIR__ . '/vendor/autoload.php';
 /////// CONFIG /////// or $argv[3] == null or $argv[4] == null
-if (!isset($argv[1]) || !isset($argv[2]) || !isset($argv[3]) || !isset($argv[4])) {
+if (!isset($argv[1]) || !isset($argv[2])) {
     echo "Usage : \"php main.php username password filename somecaption\"\n";
     exit(0);
 }
 $username = $argv[1];
 $password = $argv[2];
-$filename = $argv[3];
-$caption = $argv[4];
+
+##copy pasta
+
+
+
+
 $debug = false;
 $truncatedDebug = false;
 //////////////////////
@@ -57,7 +61,7 @@ try {
         exec("mkdir images");
     }
     $dest = "images/" . (string)$image['id'] . ".jpg";
-    echo "Picking image with id " . $imageToPick . " and saving to " . $dest;
+    echo "Picking image with id " . $imageToPick . " and saving to " . $dest."\n";
 
     copy($image['src'], $dest);
 
@@ -65,12 +69,21 @@ try {
     //get up to 30 random hashtags of the hashtag file
 
     $jsonHashtags = json_decode(file_get_contents('./../hashtagFinder/hashtags.json'));
-    echo array_rand ( $jsonHashtags, 30);
+    # get 20-30 random numbers of the big hashtag list
+    $arrayOO = array_rand ( $jsonHashtags, rand (20 , 30));
+    # fill caption var
+    $caption = "";
+    foreach ($arrayOO as $value){
+        $caption = $caption.$jsonHashtags[$value]." ";
+    }
+    echo $caption."\n";
     $metadata = ['caption' => $caption];
-
-    $photoFile = $filename;
-
-    //$ig->uploadTimelinePhoto($photoFile, $metadata);
+    #get photo by id
+    $photoFile = "images/".(string)$image['id'].'.jpg';
+    $thumb = imagecreatetruecolor(800,800);
+    imagecopyresized($thumb, imagecreatefromjpeg($photoFile), 0, 0, 0, 0, 800, 800, 1200, 1200);
+    imagejpeg($thumb, $photoFile);
+    $ig->uploadTimelinePhoto($photoFile, $metadata);
 
     //after upload write the image number we used to the blacklistId.json file
 
