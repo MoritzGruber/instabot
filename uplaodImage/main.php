@@ -64,6 +64,8 @@ try {
 
     //get up to 30 random hashtags of the hashtag file
 
+    $jsonHashtags = json_decode(file_get_contents('./../hashtagFinder/hashtags.json'));
+    echo array_rand ( $jsonHashtags, 30);
     $metadata = ['caption' => $caption];
 
     $photoFile = $filename;
