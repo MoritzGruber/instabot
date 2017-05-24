@@ -1,5 +1,14 @@
 {
   "wakeUpHour": 8,
   "sleepHour": 22,
-  "marginTime": 1.5
+  "marginTime": 1.5,
+  "maxImagesPerDay": 18,
+  "minImagesPerDay": 4,
+  "maxLikePerDay": 900,
+  "minLikePerDay": 100,
+  "percentageToFollow": 6.66,
+  "lowerFollowerCount": 2,
+  "upperFollowerCount": 400,
+  "minBreakAfterATaskInMinutes": 1.00,
+  "maxBreakAfterATaskInMinutes": 60.00
 }

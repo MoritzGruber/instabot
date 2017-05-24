@@ -3,6 +3,9 @@ samples/
 uploadImage/images
 */*.jpg
 uplaodImage/images/
+humanScheduler/blacklist.json
+humanScheduler/images/
+
 
 #Predefined python stuff...
 # Byte-compiled / optimized / DLL files
