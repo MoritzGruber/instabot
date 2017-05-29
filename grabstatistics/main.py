@@ -15,4 +15,4 @@ print(information)
 with open('phpapi/resources/userinformation.csv', 'a') as f:
     f.write(information)
 
-print('Results saved to userinformation.csv file')
+print('Results added to userinformation.csv file')

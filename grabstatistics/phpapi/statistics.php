@@ -86,25 +86,6 @@ try {
         }
     } while ($feed->more_available);
 
-    // TODO: in einer for-schleife alle feed_items durchstreifen und Likes + Kommentare hochzählen + ausgeben
-    /*foreach ($feed_items as $value)
-    {
-        $likes = $likes + $value->like_count;
-        $comments = $comments + $value->comment_count;
-    }
-
-    if ($feed->more_available)
-    {
-        $feed = $ig->getUserFeed($userid, $feed->next_max_id);
-        $feed_items = $feed->items;
-    }
-
-    foreach ($feed_items as $value)
-    {
-        $likes = $likes + $value->like_count;
-        $comments = $comments + $value->comment_count;
-    }*/
-
     echo $likes . ",";
     echo $comments;
 
