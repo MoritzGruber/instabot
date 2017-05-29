@@ -1,0 +1,24 @@
+# miscellaneous
+sigs/sigs
+sigs/sigKeys
+
+# runtime files
+*.dat
+*.jpg
+*.lock
+backups/
+sessions/
+
+# third party libraries
+vendor/
+
+# temporary editor files
+*.swp
+.\#*
+*.sublime-project
+*.sublime-workspace
+
+# operating system cache files
+.DS_Store
+Desktop.ini
+Thumbs.db
