@@ -8,7 +8,7 @@
 
 # The problem is, that some task take longer and some task are done really quick, we have to consider this
 
-from instapy import InstaPy
+#from instapy import InstaPy
 ### Taskloop
 
 
@@ -18,18 +18,23 @@ from instapy import InstaPy
 ### List of task
 
 
-session = InstaPy(username='praisingofcars', password='clubmate123')
-session.login()
+# session = InstaPy(username='praisingofcars', password='clubmate123')
+# session.login()
 
+import sys
+sys.path.insert(0,'..')
 
 import time
 import subprocess
+import InstaPy.quickstart as ooooo
 
 
-def botting():
-    session.like_by_tags(['#car', '#nature'], amount=1)
-    session.set_do_follow(enabled=True, percentage=10, times=1)
-    return True
+ooooo.somebullshit()
+
+# def botting():
+#     session.like_by_tags(['#car', '#nature'], amount=1)
+#     session.set_do_follow(enabled=True, percentage=10, times=1)
+#     return True
 
 def executeAndTrackTime(functionToTrack, params):
     # start counter
@@ -41,12 +46,12 @@ def executeAndTrackTime(functionToTrack, params):
 func = subprocess.check_output
 
 #result2 = executeAndTrackTime(func, ["php", "../uploadImage/main.php", "praisingofcars", "clubmate123"])
-result = executeAndTrackTime(botting)
+# result = executeAndTrackTime(botting, null)
 
 
-
-print (result[0])
-print (result[1])
+#
+# print (result[0])
+# print (result[1])
 
 
 # the following break time after a Task should be similar to

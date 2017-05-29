@@ -95,6 +95,8 @@ try {
     }
 
     file_put_contents($file, json_encode($jsonBlacklist));
+    // then delete the image
+    unlink($photoFile);
 
     echo "Successful \n";
     exit(0);
