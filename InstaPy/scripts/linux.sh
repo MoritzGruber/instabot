@@ -1,6 +1,8 @@
 echo "Unix InstaPy Setup"
 echo =============================================================================================
 echo "Downloading Chrome Driver..."
+export LC_ALL=C
+
 arch=$(getconf LONG_BIT)
 kernel=$(uname)
 if [ $kernel == "Darwin" ]; then

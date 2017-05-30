@@ -17,7 +17,7 @@ def instaPySession(username, password, amoutOfLikes, unfollowCount):
     # username=<your-username-here> and password=<your-password> into InstaPy
     # e.g like so InstaPy(username="instagram", password="test1234")
     starttime = time.time()
-    InstaPy(username=username, password=password, nogui=False) \
+    InstaPy(username=username, password=password, nogui=True) \
         .login() \
         .like_by_tags([getRndTag()], amount=amoutOfLikes) \
         .set_do_follow(enabled=True, percentage=11, times=2) \
