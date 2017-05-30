@@ -53,7 +53,7 @@ def like():
 
 
 
-arrayOfTasks = [sleep, upload, like]
+arrayOfTasks = [sleep, like, upload]
 
 
 def mainloop(endTime):
