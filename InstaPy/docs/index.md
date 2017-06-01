@@ -1,7 +1,7 @@
 # <img src="http://i.imgur.com/9ZjtveL.png" width="150" align="right"> InstaPy
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/timgrossmann/InstaPy/blob/master/LICENSE)
 [![built with Selenium](https://img.shields.io/badge/built%20with-Selenium-red.svg)](https://github.com/SeleniumHQ/selenium)
-[![built with Python3](https://img.shields.io/badge/Built%20with-Python3-green.svg)](https://www.python.org/)
+[![built with Python3](https://img.shields.io/badge/built%20with-Python3-green.svg)](https://www.python.org/)
 
 > **Think this tool is worth supporting?**
 Feel free to contribute to the project in whatever way!
@@ -13,6 +13,7 @@ If you're not familiar with python, you could build a github page for this proje
 Implemented in Python using the Selenium module.
 
 ### [Read about how it works on Medium](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340)
+### [Check out the talk](https://twitter.com/timigrossmann/status/869222353166839812)
 
 ## Example Script
 
@@ -66,7 +67,7 @@ export INSTA_PW="<Your password>"
 
 > If you're not too familiar with code and you're working on Windows, try out this tool to set up the settings: [InstaPy Windows GUI](https://github.com/Nemixalone/GUI-tool-for-InstaPy-script)
 
---- 
+---
 
 ### Usage and Components
 
@@ -84,6 +85,10 @@ session.login()
 #in this case: 100 dog-posts and 100 cat-posts
 session.like_by_tags(['#dog', 'cat'], amount=100)
 
+#likes specified amount of posts for each location in the array
+#in this case: 100 posts geotagged at the chrysler building and 100 posts geotagged at the salton sea
+session.like_by_locations(['26429/chrysler-building/', '224442573/salton-sea/'], amount=100)
+
 #gets tags from image passed as instagram-url and likes specified amount of images for each tag
 session.like_from_image(url='www.instagram.com/p/BSrfITEFUAM/', amount=100)
 
@@ -98,6 +103,23 @@ session.like_by_tags(['#cat'], amount=15, media='Video')
 session.like_from_image(url='www.instagram.com/image', amount=15, media='Video')
 
 session.end()
+```
+
+##### Locations
+
+To you can find locations for the like_by_locations function by browsing here:
+https://www.instagram.com/explore/locations/
+OR by regular instagram search.
+
+Example:
+* Search 'Salton Sea' and select the result with a location icon
+* The url is: https://www.instagram.com/explore/locations/224442573/salton-sea/
+* Use everything after 'locations/' or just the number
+```python
+#both of these work
+
+session.like_by_locations(['224442573/salton-sea/'], amount=100)
+session.like_by_locations(['224442573'], amount=100)
 ```
 
 ##### Restricting Likes
@@ -141,9 +163,20 @@ session.set_comments(['Nice shot!'], media='Photo')
 session.set_comments(['Great Video!'], media='Video')
 ```
 
-> **Emoji Support**  
+##### Emoji Support  
+You can use Unicode characters (like Emoji) in your comments
+1. You have to convert your comment to Unicode. This can safely be done by adding an u in front of the opening apostrophe: 
+
+```session.set_comments([u'This post is 🔥',u'More emojis are always better 💯',u'I love your posts 😍😍😍']);```
+
+```session.set_comments([u'Emoji text codes are also supported :100: :thumbsup: :thumbs_up: \u2764 💯💯']);```
+
+Emoji text codes are implemented using 2 different naming codes. A complete list of emojis codes can be found on the [Python Emoji Github](https://github.com/carpedm20/emoji/blob/master/emoji/unicode_codes.py), but you can use the alternate shorted naming scheme found for Emoji text codes [here](https://www.webpagefx.com/tools/emoji-cheat-sheet). Note: Every Emoji has not been tested. Please report any inconsistancies. 
+
+
+> **Legacy Emoji Support** 
 >
-> You can use Unicode characters (like Emoji) in your comments, but there are some limitations.
+> You can still use Unicode strings in your comments, but there are some limitations.
 > 1. You can use only Unicode characters with no more than 4 characters and you have to use the unicode code (e. g. ```\u1234```). You find a list of emoji with unicode codes on [Wikipedia](https://en.wikipedia.org/wiki/Emoji#Unicode_blocks), but there is also a list of working emoji in ```/assets```  
 >
 > 2. You have to convert your comment to Unicode. This can safely be done by adding an u in front of the opening apostrophe: ```u'\u1234 some comment'```
@@ -162,7 +195,7 @@ session.set_do_follow(enabled=True, percentage=10, times=2)
 #follows each account from a list of instagram nicknames (only follows a user once (if unfollowed again))
 # would be useful for the precise targeting. For example, if one needs to get followbacks from followers of a chosen account/group of accounts.
 
-accs = ['therock','natgeo'] 
+accs = ['therock','natgeo']
 session.follow_by_list(accs, times=1)
 ```
 
@@ -191,7 +224,7 @@ session.set_lower_follower_count(limit = 1)
 ##### Unfollowing
 
 ```python
-#unfollows 10 of the accounts your following -> instagram will only unfollow 10 before you'll be 'blocked for 10 minutes' (if you enter a higher number than 10 it will unfollow 10, then wait 10 minutes and will continue then)
+#unfollows 10 of the accounts you're following -> instagram will only unfollow 10 before you'll be 'blocked for 10 minutes' (if you enter a higher number than 10 it will unfollow 10, then wait 10 minutes and will continue then)
 
 session.unfollow_users(amount=10)
 ```
@@ -201,7 +234,7 @@ If you notice that one or more of the above functionalities are not working as e
 ```python
 session.set_do_follow(enabled=True, percentage=10, times=2)
 ```
-but none of the profiles are being followed - or any such functionality is misbehaving - then one thing you should check is the position/order of such methods in your script. Essentially, all the ```set_*``` methods have to be before ```like_by_tags``` or ```unfollow```. This is also implicit in all the exmples and quickstart.py
+but none of the profiles are being followed - or any such functionality is misbehaving - then one thing you should check is the position/order of such methods in your script. Essentially, all the ```set_*``` methods have to be before ```like_by_tags``` or ```like_by_locations``` or ```unfollow```. This is also implicit in all the exmples and quickstart.py
 
 ##### Running on a server?
 
@@ -307,7 +340,7 @@ After the build succeeded, you can simply run the container with:
 docker run --name=instapy -e INSTA_USER=<your-user> -e INSTA_PW=<your-pw> -d instapy
 ```
 
---- 
+---
 
 ###### Have Fun & Feel Free to report any issues
 
