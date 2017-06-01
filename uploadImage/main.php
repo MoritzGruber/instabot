@@ -46,7 +46,6 @@ try {
             $imageToPick = rand(0, $totalNumberOfImages);
             echo $imageToPick."\n";
             echo $totalNumberOfImages."\n";
-            echo (string)$jsonBlacklist."\n";
             if (!in_array($imageToPick, $jsonBlacklist)){
                 //we break the loop if the rand number is not in the blacklist
                 break;

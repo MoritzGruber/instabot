@@ -20,11 +20,35 @@ else
   sudo dpkg-reconfigure locales
   sudo pip3 install --upgrade pip
   pushd ~
+  wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  sudo apt-get install -y -f
+  sudo rm google-chrome-stable_current_amd64.deb
   pushd -0
 fi
 echo
 pushd ../
 echo "Downloading Chrome Driver..."
+if [ $kernel == "Darwin" ]; then
+  curl -o chromedriver.zip -O https://chromedriver.storage.googleapis.com/2.29/chromedriver_mac64.zip
+else
+  if [ $arch == "64" ]; then
+    wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip -O chromedriver.zip
+  else
+    wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux32.zip -O chromedriver.zip
+  fi
+fi
+echo "Chrome Driver download completed."
+echo
+echo "Unzipping Chrome Driver..."
+unzip chromedriver.zip
+mv ./chromedriver ./assets/chromedriver
+chmod 755 ./assets/chromedriver
+echo "Unzipping completed."
+echo
+echo "Removing unneeded file..."
+rm chromedriver.zip
+echo "Removal completed."
 echo
 if [ $kernel == "Darwin" ]; then
   sudo python setup.py install

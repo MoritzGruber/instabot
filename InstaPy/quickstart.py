@@ -21,9 +21,7 @@ def instaPySession(username, password, amoutOfLikes, unfollowCount):
         .login() \
         .like_by_tags([getRndTag()], amount=amoutOfLikes) \
         .set_do_follow(enabled=True, percentage=11, times=2) \
-        .set_upper_follower_count(limit=220) \
-        .unfollow_users(amount=unfollowCount)\
+        .set_upper_follower_count(limit=5000) \
         .end()
-
     print ('Done in ' + str(time.time() - starttime) + ' sec')
 
