@@ -1,5 +1,11 @@
 echo "Unix InstaPy Setup"
 echo =============================================================================================
+<<<<<<< HEAD:InstaPy/scripts/unix.sh
+=======
+echo "Downloading Chrome Driver..."
+export LC_ALL=C
+
+>>>>>>> 1f20f7edc661f42d4ce4948cdda6c140b48d1ffd:InstaPy/scripts/linux.sh
 arch=$(getconf LONG_BIT)
 kernel=$(uname)
 echo "Installing depedencies..."
