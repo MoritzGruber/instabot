@@ -1,12 +1,10 @@
 FROM ubuntu:16.04
 
-MAINTAINER Grossmann Tim <contact.timgrossmann@gmail.com>
+MAINTAINER Moritz Gruber <moritzgruber@yahoo.de>
 
 # Set env variables
 ENV CHROME https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ENV CRHOMEDRIVER http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
-ENV INSTATOPIC car
-ENV HASHTAGCOUNT 30
 
 # Environment setup
 RUN apt-get update \
@@ -73,31 +71,24 @@ RUN pip install pyvirtualdisplay
 RUN pip install selenium
 RUN pip install clarifai
 RUN pip install emoji
+RUN pip install requests
 
+RUN wget ${CRHOMEDRIVER} \
+    && unzip chromedriver_linux64 \
+    && mv chromedriver /usr/bin/chromedriver \
+    && chmod +x /usr/bin/chromedriver
 
-COPY ./ ./instabot
-WORKDIR /instabot/hashtagFinder/phpapi/
 RUN apt-get purge php7.1 -y
 RUN apt-get install php7.0 -y
 RUN rm -rf /etc/php/7.1/
 RUN apt-get install composer -y
-RUN php --version
+
+COPY ./ ./
+WORKDIR /instabot/phpapi/
 RUN composer install
-WORKDIR /instabot/hashtagFinder/
-RUN python main.py car 30
-RUN echo "Grabing Images"
 
-WORKDIR /instabot/grabImages/
-RUN python main.py car
-WORKDIR /instabot/InstaPy/scripts
-
-RUN wget ${CRHOMEDRIVER} \
-    && unzip chromedriver_linux64 \
-    && mv chromedriver /instabot/InstaPy/assets/chromedriver \
-    && chmod +x /instabot/InstaPy/assets/chromedriver
-
-WORKDIR /instabot/InstaPy/
-CMD ["python", "sleepJob.py"]
+WORKDIR /instabot/
+CMD ["python", "test.py"]
 
 
 

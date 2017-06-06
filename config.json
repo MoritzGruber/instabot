@@ -1,5 +1,5 @@
 {
-  "username": "awesomenaturelove",
+  "username": "praisingofcars",
   "password": "clubmate123",
   "topic": "car",
   "wakeUpHour": 8,
@@ -13,5 +13,7 @@
   "lowerFollowerCount": 2,
   "upperFollowerCount": 400,
   "minBreakAfterATaskInMinutes": 1.00,
-  "maxBreakAfterATaskInMinutes": 60.00
+  "maxBreakAfterATaskInMinutes": 60.00,
+  "dashboardIp": "46.101.111.251",
+  "dashboardPort": "8001"
 }

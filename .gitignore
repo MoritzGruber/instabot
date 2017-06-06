@@ -1,10 +1,8 @@
 #Own stuff
-samples/
-uploadImage/images
 */*.jpg
-uplaodImage/images/
-humanScheduler/blacklist.json
-humanScheduler/images/
+instabot/phpapi/composer.lock
+instabot/phpapi/vendor
+instabot/savedStatus
 .idea/workspace.xml
 
 
