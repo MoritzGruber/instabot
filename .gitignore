@@ -2,7 +2,10 @@
 */*.jpg
 instabot/phpapi/composer.lock
 instabot/phpapi/vendor
-instabot/savedStatus
+instabot/savedStatus/hashtags.json
+instabot/savedStatus/images.json
+instabot/savedStatus/blacklist.json
+
 .idea/workspace.xml
 
 
