@@ -88,7 +88,10 @@ WORKDIR /instabot/phpapi/
 RUN composer install
 
 WORKDIR /instabot/
-CMD ["python", "test.py"]
+
+RUN git clone https://github.com/MoritzGruber/InstaPy.git ./Services/Tasks/InstaPy
+CMD ["python", "main.py"]
+
 
 
 
