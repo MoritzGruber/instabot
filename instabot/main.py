@@ -8,6 +8,11 @@ from Services.Tasks import InstaPySession
 from Services import StatusReport
 import os.path
 import threading
+import json
+
+# load config
+with open('./../config.json') as data_file:
+    config = json.load(data_file)
 
 
 class Instabot():
@@ -17,11 +22,11 @@ class Instabot():
     def __init__(self):
         if not os.path.isfile('savedStatus/hashtags.json'):
             print('Generate Hashtags')
-            Hashtags.generate('car', 30)
+            Hashtags.generate(config['topic'], config['amountOfHashtags'])
 
         if not os.path.isfile('savedStatus/images.json'):
             print('Generate Images')
-            Images.generate('car')
+            Images.generate(config['topic'])
 
     def start(self):
         if self.sleeping:
