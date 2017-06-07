@@ -15,16 +15,16 @@ Grabs different data from a Instagram account:
 * likes
 * comments
 
-## Configuration
+### Configuration
 
 Open statistics.php and add a parser account: $username = 'xxx'; and $password = 'xxx';
 
-## Start
+### Start
 
 ```python Statistics.py tr3ndfood```
 
 Use carefully on users with a lot of posts (1000+), long duration loading times and potential ban of the parser account, because of to many API calls: about one for each ~18 posts.
 
-## Results
+### Results
 
 The received data gets written into phpapi/resources/userinformation.csv.
