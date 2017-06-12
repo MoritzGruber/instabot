@@ -19,19 +19,18 @@ print("\n")
 for val in information_dict:
     print(val)
 print("\n")
-print '..grabbed ' + str(len(information_dict)) + '/' + str(num) + ' comments..';
+print '..grabbed ' + str(len(information_dict)) + '/' + str(num) + ' comments..'
 print("\n")
 
 data = {};
-data['topic'] = topic;
-data['maxpp'] = maxpp;
-data['num'] = num;
-
-data['comments'] = information_dict;
+data['topic'] = topic
+data['maxpp'] = maxpp
+data['num'] = num
+data['comments'] = information_dict
 
 with open('phpapi/resources/comments.json', 'a') as f:
     f.write("\n")
     f.write("\n")
     f.write(json.dumps(data).decode('unicode-escape').encode('utf8'))
 
-print('..results added to phpapi/resources/comments.json file.');
+print('..results added to phpapi/resources/comments.json file.')

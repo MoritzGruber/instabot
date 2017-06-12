@@ -27,7 +27,7 @@ Use carefully on users with a lot of posts (1000+), long duration loading times 
 
 #### Results
 
-The received data gets written into phpapi/resources/userinformation.csv.
+The received data gets written into phpapi/resources/userinformation.json.
 
 ## grabcomments
 

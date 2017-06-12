@@ -10,9 +10,13 @@ def getUserInformation():
 
 getUserInformation()
 
+print("\n")
 print(information)
+print("\n")
 
-with open('phpapi/resources/userinformation.csv', 'a') as f:
+with open('phpapi/resources/userinformation.json', 'a') as f:
+    f.write("\n")
+    f.write("\n")
     f.write(information)
 
-print('Results added to userinformation.csv file')
+print('..results added to phpapi/resources/userinformation.json file.')
