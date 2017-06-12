@@ -13,16 +13,19 @@ def getComments():
 
 getComments()
 
+information_dict=json.loads(information)
+
 print("\n")
+for val in information_dict:
+    print(val)
 print("\n")
-print(information)
+print '..grabbed ' + str(len(information_dict)) + '/' + str(num) + ' comments..';
+print("\n")
 
 data = {};
 data['topic'] = topic;
 data['maxpp'] = maxpp;
 data['num'] = num;
-
-information_dict=json.loads(information)
 
 data['comments'] = information_dict;
 
@@ -31,4 +34,4 @@ with open('phpapi/resources/comments.json', 'a') as f:
     f.write("\n")
     f.write(json.dumps(data).decode('unicode-escape').encode('utf8'))
 
-print('Results added to comments.json file')
+print('..results added to phpapi/resources/comments.json file.');
