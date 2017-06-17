@@ -76,6 +76,8 @@ apt-get purge php7.1 -y
 apt-get install php7.0 -y
 rm -rf /etc/php/7.1/
 apt-get install composer -y
+apt-get install php7.0-curl
+apt-get install php7.0-gd
 cd ./instabot/phpapi/
 composer install
 cd ..
