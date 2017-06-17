@@ -17,7 +17,11 @@ def generate(tag, amount):
             # 1
             for tag in tmpNextSet:
                 time.sleep(0.1)
-                relatedTags = subprocess.check_output(["php", "phpapi/relatedTags.php", tag[1:]])
+                relatedTags = str(subprocess.check_output(["php", "phpapi/relatedTags.php", tag[1:]]))
+                if('omething went wrong' in relatedTags):
+                    print ('sth went wrong, waiting a 300 millsec')
+                    time.sleep(0.3)
+                    continue
                 arrayOfTags = str.split(relatedTags)
                 print (relatedTags)
                 for element in arrayOfTags:
