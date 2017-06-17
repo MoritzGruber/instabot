@@ -20,7 +20,7 @@ bots = {}
 def checkTimeout():
     while (True):
         for key in bots:
-            if bots[key].currtime < time.time() - 20:
+            if bots[key].currtime < time.time() - 60:
                 bots[key].running = False
             else:
                 bots[key].running = True
@@ -31,7 +31,7 @@ def checkTimeout():
 def index():
     if request.environ.get('REMOTE_ADDR') in bots.keys():
         print "updating " + request.environ.get('REMOTE_ADDR')
-        bots[request.environ.get('REMOTE_ADDR')].time = time.time()
+        bots[request.environ.get('REMOTE_ADDR')].currtime = time.time()
     else:
         print "creating " + request.environ.get('REMOTE_ADDR')
         for line in request.body:
@@ -46,7 +46,7 @@ def index():
     for key in bots:
         returnstring = returnstring + bots[key].ip + " "
         returnstring = returnstring + bots[key].username + " "
-        returnstring = returnstring + str(bots[key].running) + " \n"
+        returnstring = returnstring + str(bots[key].running) + " <br>"
 
     return returnstring
 
