@@ -2,7 +2,9 @@
 sudo apt install git
 git clone https://github.com/MoritzGruber/InstaPy.git ./instabot/Services/Tasks/InstaPy
 export CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+export CHROMEARM="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
+export CRHOMEDRIVERARM="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
 
 # Environment setup
 apt-get update \
@@ -38,6 +40,7 @@ apt-get update \
         libappindicator1 \
        xdg-utils \
        git \
+       xvfb\
    && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
    && apt-get -f install
@@ -59,12 +62,13 @@ apt-get install chromium-browser -y
 apt-get install unzip -y
 export LC_ALL=C
 apt-get install python-pip -y
-pip install --upgrade pip
-pip install pyvirtualdisplay
-pip install selenium
-pip install clarifai
-pip install emoji
-pip install requests
+export LC_ALL=C
+pip3 install --upgrade pip
+pip3 install pyvirtualdisplay
+pip3 install selenium
+pip3 install clarifai
+pip3 install emoji
+pip3 install requests
 
 
 wget ${CRHOMEDRIVER} \
