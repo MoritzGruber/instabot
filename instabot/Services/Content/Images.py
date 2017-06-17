@@ -16,7 +16,7 @@ def generate(tag):
 
     jsonToSave['total_results'] = jsonResult['total_results']
     jsonToSave['photos'] = []
-    numberOfPageesNeeded = ((jsonResult['total_results']) / 40 + 1)
+    numberOfPageesNeeded = int((jsonResult['total_results']) / 40 + 1)
 
     print ('Found ' + str(jsonResult['total_results']) + ' images')
     print (str(numberOfPageesNeeded + 1) + ' api calls used form 200/h')
