@@ -38,8 +38,8 @@ def start(dayScheduler, tasks):
         # 1. generate new sleep and wakeup time
         wakeUpTime = getTimestamp(humanize(config['wakeUpHour'], config['marginTime']))
         sleepTime = getTimestamp(humanize(config['sleepHour'], config['marginTime']))
-        print 'Going to bed at: ' + str(datetime.datetime.fromtimestamp(sleepTime))
-        print 'Waking up at: ' + str(datetime.datetime.fromtimestamp(wakeUpTime))
+        print ('Going to bed at: ' + str(datetime.datetime.fromtimestamp(sleepTime)))
+        print ('Waking up at: ' + str(datetime.datetime.fromtimestamp(wakeUpTime)))
         # 2. Work until sleep
         while (sleepTime > time.time()):
             print('Calling Human Scheduler')

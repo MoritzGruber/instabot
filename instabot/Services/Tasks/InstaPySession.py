@@ -2,8 +2,8 @@ import json
 import random
 import time
 import logging
-from InstaPy.instapy import InstaPy
-from Task import baseTask
+from .InstaPy.instapy import InstaPy
+from .Task import baseTask
 
 
 # Write your automation here

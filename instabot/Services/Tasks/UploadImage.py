@@ -1,6 +1,6 @@
 import logging
 import subprocess
-from Task import baseTask
+from .Task import baseTask
 
 
 class uploadTask(baseTask):

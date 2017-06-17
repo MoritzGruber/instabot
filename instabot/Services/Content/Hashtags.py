@@ -19,7 +19,7 @@ def generate(tag, amount):
                 time.sleep(0.1)
                 relatedTags = subprocess.check_output(["php", "phpapi/relatedTags.php", tag[1:]])
                 arrayOfTags = str.split(relatedTags)
-                print relatedTags
+                print (relatedTags)
                 for element in arrayOfTags:
                     setOfTags.add("#" + element)
                     percentage = ((float(setOfTags.__len__()) / float(amount)) * 100)
