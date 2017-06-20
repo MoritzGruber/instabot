@@ -544,4 +544,11 @@ Tag [1/[]]--> #carbonfiber
 [13/58]https://www.instagram.com/p/BVAeAacgXFW/?tagged=carbonfiber
 [14/58]https://www.instagram.com/p/BVAd_nLgSPX/?tagged=carbonfiber
 [15/58]https://www.instagram.com/p/BVAd-gwFCzA/?tagged=carbonfiber
-[16/58]https://www.instagram.com/p/BVAd58IlN9W/?tagged=carbonfiber
+[16/58]https://www.instagram.com/p/BVAd58IlN9W/?tagged=carbonfiberSession started - 2017-06-17 14:20:08
+Logged in successfully!
+Tag [1/[]]--> b'#car'
+[1/63]https://www.instagram.com/p/BVbqrmXDLHj/?tagged=car
+[2/63]https://www.instagram.com/p/BVaWBOqFrJN/?tagged=car
+[3/63]https://www.instagram.com/p/BVb5YfpFOyG/?tagged=car
+[4/63]https://www.instagram.com/p/BVb8UHJBQIY/?tagged=car
+[5/63]https://www.instagram.com/p/BVb9feHFC--/?tagged=car

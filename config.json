@@ -1,8 +1,8 @@
 {
   "username": "praisingofcars",
   "password": "clubmate123",
-  "amountOfHashtags": 70,
-  "topic": "car",
+  "amountOfHashtags": 10,
+  "topic": "computer",
   "wakeUpHour": 8,
   "sleepHour": 22,
   "marginTime": 1.5,
