@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dashbaord</title>
+    <link href="app.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="dashboard">
+    <div class="servers">
+        <div class="server" v-for="(server, key, index) in servers" v-bind:class="{ running: server.running, stopped: !server.running }" v-on:click="selected = server.ip">
+                <h1>{{server.name}}</h1> <br>
+                <span>IP: {{server.ip}} </span> <br>
+                <span v-for="(value, key, index) in server.info">{{key}}: {{value}} </span> <br>
+        </div>
+    </div>
+    <div class="logs">
+        <div class="log" v-for="value in logs[selected]">
+            {{value}}
+        </div>
+    </div>
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+<script>
+</script>
+</body>
+</html>

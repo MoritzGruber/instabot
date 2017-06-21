@@ -8,9 +8,9 @@ import os
 def getUserInformation(username):
     # global information
     information = str(subprocess.check_output(["php", "phpapi/statistics.php", username]).decode('utf-8'))
-    print("\n")
+    # print("\n")
     print(information)
-    print("\n")
+    # print("\n")
 
     fileAleadyExit = os.path.isfile('savedStatus/userinformation.json')
     with open('savedStatus/userinformation.json', 'a') as f:
@@ -19,7 +19,7 @@ def getUserInformation(username):
             f.write("\n")
         f.write(information)
 
-    print('..results added to phpapi/resources/userinformation.json file.')
+    # print('..results added to phpapi/resources/userinformation.json file.')
 
     return information
 

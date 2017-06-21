@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: black;
+  font: 13px Helvetica, Arial; }
+  body .servers {
+    background-color: gray;
+    width: 30%;
+    height: 100%;
+    float: left; }
+    body .servers .server {
+      padding-top: 20px; }
+    body .servers .running {
+      background-color: lightgreen; }
+    body .servers .stopped {
+      background-color: lightcoral; }
+  body .logs {
+    float: left;
+    background: black;
+    width: 70%;
+    height: 100%;
+    color: white; }
+
+/*# sourceMappingURL=app.css.map */

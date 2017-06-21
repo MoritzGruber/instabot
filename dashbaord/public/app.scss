@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font: 13px Helvetica, Arial;
+  .servers{
+    background-color: gray;
+    width: 30%;
+    height: 100%;
+    float: left;
+    .server{
+      padding-top: 20px;
+    }
+    .running{
+      background-color: lightgreen;
+    }
+    .stopped{
+      background-color: lightcoral;
+    }
+  }
+  .logs{
+    float: left;
+    background: black;
+    width: 70%;
+    height: 100%;
+    color: white;
+  }
+}
+

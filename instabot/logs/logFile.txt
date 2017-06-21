@@ -551,4 +551,8 @@ Tag [1/[]]--> b'#car'
 [2/63]https://www.instagram.com/p/BVaWBOqFrJN/?tagged=car
 [3/63]https://www.instagram.com/p/BVb5YfpFOyG/?tagged=car
 [4/63]https://www.instagram.com/p/BVb8UHJBQIY/?tagged=car
-[5/63]https://www.instagram.com/p/BVb9feHFC--/?tagged=car
+[5/63]https://www.instagram.com/p/BVb9feHFC--/?tagged=carSession started - 2017-06-21 16:19:01
+Logged in successfully!
+Tag [1/[]]--> b'#foodlike'
+[1/88]https://www.instagram.com/p/BVjcPtmF258/?tagged=foodlike
+[2/88]https://www.instagram.com/p/BVl2VJZhKDZ/?tagged=foodlike

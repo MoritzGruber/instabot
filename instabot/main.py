@@ -15,6 +15,7 @@ with open('./../config.json') as data_file:
     config = json.load(data_file)
 
 
+
 class Instabot():
     sleeping = True
     Tasks = [Task.baseTask]
@@ -45,3 +46,16 @@ if __name__ == '__main__':
     Bot.runStatusServer()
     Bot.Tasks = [InstaPySession.InstaPyTask, InstaPySession.InstaPyTask, UploadImage.uploadTask]
     Bot.start()
+
+
+def startMain():
+    Bot = Instabot()
+    Bot.Tasks = [InstaPySession.InstaPyTask, InstaPySession.InstaPyTask, UploadImage.uploadTask]
+    Bot.start()
+
+
+def startThread():
+    Mainthread = threading.Thread(target=startMain)
+    Mainthread.daemon = True
+    Mainthread.start()
+    return Mainthread

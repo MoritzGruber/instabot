@@ -1,6 +1,43 @@
 # instabot
 A Instagram bot for educational purposes
 
+## Dashboard 
+
+The Dashboard consists of 3 pieces: Website(Dashboard GUI), a Nodejs server and Python Remote Executer
+
+Running on port localhost:3000
+
+### Website and Nodeserver
+
+Both are under /dashboard/
+
+#### Setup 
+```bash
+cd dashboard 
+npm install
+```
+#### Run 
+```bash
+node index.js
+```
+
+### Python Remote Executer
+
+this script is under /instabot/remoteExec.py
+
+#### Setup
+the neccesarry stuff is included in the setup bash script
+```bash
+bash installwithoutdocker.sh
+#or
+pip3 install socketIO-client-2
+```
+
+#### Run 
+```bash
+python3 /instabot/remoteExec.py
+```
+
 ## statistics
 
 Returns different information from a Instagram account:

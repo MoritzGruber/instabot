@@ -69,6 +69,7 @@ pip3 install selenium
 pip3 install clarifai
 pip3 install emoji
 pip3 install requests
+pip3 install socketIO-client-2
 
 
 wget ${CRHOMEDRIVER} \

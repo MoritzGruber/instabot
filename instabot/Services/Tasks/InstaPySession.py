@@ -30,7 +30,7 @@ def instaPySession(username, password, amoutOfLikes, unfollowCount):
     # username=<your-username-here> and password=<your-password> into InstaPy
     # e.g like so InstaPy(username="instagram", password="test1234")
     starttime = time.time()
-    InstaPy(username=username, password=password, nogui=True) \
+    InstaPy(username=username, password=password, nogui=False) \
         .login() \
         .set_do_follow(enabled=True, percentage=33, times=2) \
         .set_upper_follower_count(limit=400) \
