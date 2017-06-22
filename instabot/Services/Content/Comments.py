@@ -7,14 +7,13 @@ import json
 # num = sys.argv[3]
 
 def getComments(topic, maxpp, num):
-    information = subprocess.check_output(["php", "phpapi/comments.php", str(topic), str(maxpp), str(num)]).decode('utf-8')
-    information_dict = str(information)
+    information = subprocess.check_output(["php", "phpapi/comments.php", str(topic), str(maxpp), str(num)]).decode('unicode-escape').encode('latin1').decode('utf8')
     data = {}
     data['topic'] = topic
     data['maxpp'] = maxpp
     data['num'] = num
-    data['comments'] = information_dict
-    return json.dumps(data)
+    data['comments'] = information
+    return json.dumps(data, ensure_ascii=False)
 
 def getCommentsSaveToFile(topic, maxapp, num):
     data = getComments(topic, maxapp, num)

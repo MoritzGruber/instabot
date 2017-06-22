@@ -64,6 +64,7 @@ def on_disconnect():
 
 def on_reconnect():
     print('reconnect')
+    time.sleep(0.2)
     socketIO.emit('registerServer')
 
 

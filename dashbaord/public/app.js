@@ -4,12 +4,13 @@ var vm = new Vue({
     el: "#dashboard",
     data: {
         username: 'tr3ndfood',
-        statistics: function () {
+        statistics: [],
+        getStatistics: function () {
             socket.emit('getStatistics', this.username, function (error, message) {
                 if (error) {
                     console.log("getStatistics: " + error);
-
                 } else {
+                    vm.statistics.push(message);
                     console.log("getStatistics: " + message);
                 }
             });
@@ -17,34 +18,48 @@ var vm = new Vue({
         topic: 'food',
         maxpp: 3,
         maxtotal: 6,
-        comments: function () {
+        comments: [],
+        getComments: function () {
             socket.emit('getComments', this.topic, this.maxpp, this.maxtotal, function (error, message) {
                 if (error) {
                     console.log("getComments: " + error);
 
                 } else {
+                    var obj = JSON.parse(message);
+                    vm.comments = vm.comments.concat(obj.comments);
                     console.log("getComments: " + message);
                 }
             });
         },
         amountHashtags:10,
-        hashtags: function () {
+        hashtags: [],
+        getHashtags: function () {
             socket.emit('getHashtags', this.topic, this.amountHashtags, function (error, message) {
                 if (error) {
                     console.log("getHashtags: " + error);
 
                 } else {
+                    // console.log(typeof message);
+                    hashtags = JSON.parse(message);
+                    for (index in hashtags){
+                        vm.hashtags.push(hashtags[index]);
+                    }
+                    // vm.hashtags.push(message);
                     console.log("getHashtags: " + message);
                 }
             });
         },
-        images: function () {
-            socket.emit('getImages', this.topic, function (error, message) {
+        images: [],
+        getImages: function () {
+            socket.emit('getImages', this.topic, function (error, images) {
                 if (error) {
                     console.log("getImages: " + error);
-
                 } else {
-                    console.log("getImages: " + message);
+                    var images = JSON.parse(images);
+                    for(index in images.photos){
+                        vm.images.push(images.photos[index].src);
+                    }
+                    console.log("getImages found "+images.photos.length+" images");
                 }
             });
         },
