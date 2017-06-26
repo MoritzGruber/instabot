@@ -57,7 +57,7 @@ def on_stop_bot():
 
 def on_connect():
     print('connect')
-    socketIO.emit('registerServer')
+    socketIO.emit('registerRemoteJob')
 
 def on_disconnect():
     print('disconnect')
@@ -65,7 +65,7 @@ def on_disconnect():
 def on_reconnect():
     print('reconnect')
     time.sleep(0.2)
-    socketIO.emit('registerServer')
+    socketIO.emit('registerRemoteJob')
 
 
 def on_aaa_response(*args):

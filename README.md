@@ -1,6 +1,9 @@
 # instabot
 A Instagram bot for educational purposes
 
+## Todo:
+Submodule InstaPy machen
+
 ## Dashboard 
 
 The Dashboard consists of 3 pieces: Website(Dashboard GUI), a Nodejs server and Python Remote Executer
@@ -35,7 +38,8 @@ pip3 install socketIO-client-2
 
 #### Run 
 ```bash
-python3 /instabot/remoteExec.py
+cd instabot
+python3 remoteExec.py
 ```
 
 ## statistics

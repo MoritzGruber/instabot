@@ -555,4 +555,10 @@ Tag [1/[]]--> b'#car'
 Logged in successfully!
 Tag [1/[]]--> b'#foodlike'
 [1/88]https://www.instagram.com/p/BVjcPtmF258/?tagged=foodlike
-[2/88]https://www.instagram.com/p/BVl2VJZhKDZ/?tagged=foodlike
+[2/88]https://www.instagram.com/p/BVl2VJZhKDZ/?tagged=foodlikeSession started - 2017-06-22 17:24:00
+Logged in successfully!
+Tag [1/[]]--> b'#foodoftheday'
+Session started - 2017-06-22 17:24:20
+Session started - 2017-06-22 17:52:22
+Logged in successfully!
+Tag [1/[]]--> b'#picfoods'
