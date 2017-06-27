@@ -75,7 +75,7 @@ try {
 
     $jsonHashtags = json_decode(file_get_contents('./savedStatus/hashtags.json'));
     # get 20-30 random numbers of the big hashtag list
-    $arrayOO = array_rand ( $jsonHashtags, rand (28 , 30));
+    $arrayOO = array_rand ( $jsonHashtags, rand (3 , 10));
     # fill caption var
     $caption = "";
     foreach ($arrayOO as $value){
