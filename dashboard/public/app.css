@@ -112,6 +112,8 @@ body {
     background-color: #404984;
 
     margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
   }
   body #middleRow{
     background-color: blue;
@@ -209,6 +211,10 @@ body {
   }
   body .images img {
       float: left;
+
+      margin-bottom: 20px !important;
+      margin-right: 1px;
+      margin-left: 1px;
   }
   body .images {
       margin-top: 30px;
