@@ -212,9 +212,9 @@ body {
   body .images img {
       float: left;
 
-      margin-bottom: 20px !important;
-      margin-right: 1px;
-      margin-left: 1px;
+      margin-bottom: 26px !important;
+      margin-right: 13px;
+      margin-left: 13px;
   }
   body .images {
       margin-top: 30px;
