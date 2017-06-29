@@ -112,6 +112,8 @@ body {
     background-color: #404984;
 
     margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
   }
   body #middleRow{
     background-color: blue;
