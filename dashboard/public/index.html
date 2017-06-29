@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="app.css" rel="stylesheet" type="text/css"/>
+    <!-- get the required files from 3rd party sources -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!-- component template -->
+<script type="text/x-template" id="grid-template">
+  <table>
+    <thead>
+      <tr>
+        <th v-for="key in columns"
+          @click="sortBy(key)"
+          :class="{ active: sortKey == key }">
+          {{ key | capitalize }}
+          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="entry in filteredData">
+        <td v-for="key in columns">
+          {{entry[key]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</script>
+
+<div id="topcontr">
+    <div class="row" id="topRow">
+        <div class="col-sm-5">
+            <div id="username">USERNAME
+            <input id="usernameinput" v-model="username" value="username"/>
+            </div>
+        </div>
+        <div class="col-sm-2" id="title">
+            instagram microservices
+        </div>
+        <div class="col-sm-5">
+            <div id="top-btn">
+                <button class="btn btn-default btn-lg top-btns" v-on:click="getStatistics()">Statistics</button>
+                <button class="btn btn-success btn-lg top-btns" v-on:click="startBot()">Start Bot</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- demo root element -->
+<div id="demo">
+    <demo-grid
+        :data="gridData"
+        :columns="gridColumns">
+    </demo-grid>
+</div>
+
+<div id="botcontr">
+    <div class="row" id="bottomRow">
+        <div class="col-xs-4" id="commentsdiv">
+            <div class="inputs">
+                <p class="descr-btnu">TOPIC</p>
+                <input v-model="topic" value="food"/>
+                <p class="descr-btn descrInput">MAX COMMENTS P.P.</p>
+                <input class="descrInput" v-model="maxpp" value="3"/>
+                <p class="descr-btn descrInput">TOTAL COMMENTS</p>
+                <input class="descrInput" v-model="maxtotal" value="6"/>
+            </div>
+            <div class="buttons">
+                <button class='btn btn-primary btn-md send-button' v-on:click="getComments()">Comments  ></button>
+            </div>
+
+            <div class="comments">
+                <li class="results" v-for="comment in comments">
+                    {{ comment }}
+                </li>
+            </div>
+        </div>
+        <div class="col-xs-4" id="hashtagdiv">
+            <div class="inputs">
+                    <p class="descr-btnu">TOPIC</p>
+                    <input v-model="topic" value="food"/>
+                    <p class="descr-btn descrInput">TOTAL HASHTAGS</p>
+                    <input class="descrInput" v-model="amountHashtags" value="10"/>
+                </div>
+                <div class="buttons">
+                    <button class='btn btn-primary btn-md send-button' v-on:click="getHashtags()">Hashtags  ></button>
+                </div>
+                <div class="hashtags results">
+                <li v-for="hashtag in hashtags">
+                    {{ hashtag }}
+                </li>
+            </div>
+        </div>
+        <div class="col-xs-4" id="imgdiv">
+                <div class="inputs">
+                    <p class="descr-btnu">TOPIC</p>
+                    <input v-model="topic" value="food"/>
+                </div>
+                <div class="buttons">
+                    <button class='btn btn-primary btn-md send-button' v-on:click="getImages()">Images  ></button>
+                </div>
+                <div class="images">
+                <li v-for="imagesrc in images">
+                    <img :src="imagesrc" v-bind:alt="imagesrc" width="180" height="180">
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p id="footer">Die Instagram Microservices wurden im Rahmen eines Projekts an der Hochschule der Medien entwickelt. Beteiligt waren David Bochan, Mirela Curiman, Karim Ghany, Moritz Gruber und Patrick Löw. Prof. Walter Kriha stellte sich als Betreuer zur Verfügung.</p>
+<div class="image"></div>​
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+</script>
+
+</body>
+</html>

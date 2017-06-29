@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #1B214B !important;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+  height: 100%; }
+  body #dashboard {
+    float: left;
+    width: 100%;
+    height: 100%; }
+    body #dashboard div {
+      padding-left: 2px;
+      padding-right: 2px; }
+    body #dashboard .controls {
+      width: 100%;
+      height: 200px; }
+      body #dashboard .controls .buttons {
+        width: 100%; }
+      body #dashboard .controls .inputs {
+        color: white;
+        width: 100%; }
+    body #dashboard .statistics {
+      float: left;
+      word-wrap: break-word;
+      width: 20%;
+      height: 100%; }
+      body #dashboard .statistics p {
+        width: 100%; }
+    body #dashboard .comments {
+      float: left;
+      width: 20%;
+      height: 100%; }
+    body #dashboard .hashtags {
+      float: left;
+      width: 20%; }
+    body #dashboard .images {
+      float: left;
+      width: 40%; }
+    body #dashboard li {
+      color: white; }
+    body #dashboard .images img {
+      float: left; 
+    }
+  body table {
+    border: 2px solid #404984;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+    body table th {
+      background-color: #404984;
+      color: rgba(255,255,255,0.66);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    body table td {
+      background-color: #f9f9f9;
+    }
+    body th, td {
+      min-width: 120px;
+      padding: 10px 20px;
+    }
+    body table th.active {
+      color: #fff;
+    }
+    body table th.active .arrow {
+      opacity: 1;
+    }
+  body .arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    opacity: 0.66;
+  }
+    body .arrow.asc {
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid #fff;
+    }
+    body .arrow.dsc {
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid #fff;
+    }
+  body #username {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 3px !important;
+    margin-right: 20px;
+    margin-top: 10px !important;
+  }
+  body #usernameinput {
+     margin-left: 15px !important;
+     color: black; 
+  }
+  body #bottomRow {
+    background-color: #404984;
+    margin-left: 60px;
+    margin-right: 60px;
+    box-shadow: 1px 1px 1px black;
+    display: flex;
+  }
+  body #topRow{
+    background-color: #404984;
+
+    margin-top: 20px;
+  }
+  body #middleRow{
+    background-color: blue;
+  }
+  body .top-btns {
+    margin-left: 10px;
+  }
+  body #topRow {
+    padding: 15px;
+    box-shadow: 1px 1px 1px black;
+  }
+  body #top-btn {
+    margin: 5px;
+    float: right;
+  }
+  body #demo {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 1px black;
+    background-color: #404984;
+  }
+  body #title {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  body #commentsdiv {
+    background-color: #404984;
+    float: left;
+    border-right: 3px solid #1B214B;
+    box-shadow: 1px 0px 0px black;
+    flex: 1; /* additionally, equal width */
+  }
+  body #imgdiv {
+    background-color: #404984;
+        border-left: 3px solid #1B214B;
+    box-shadow: 1px 0px 0px black;
+    flex: 1; /* additionally, equal width */
+  }
+  body #hashtagdiv {
+    background-color: #404984;
+    float: right;
+    box-shadow: 1px 0px 0px black;
+    flex: 1; /* additionally, equal width */
+  }
+  body .buttons {
+    float: right;
+    vertical-align: top !important;
+    margin-top: 1px;
+  }
+  body .descr-btn {
+    margin-top: 15px !important;
+    margin-bottom: 7px;
+    color: #fff;
+  }
+   body .descr-btnu {
+    color: #fff;
+  }
+  body .inputs {
+    display:inline-block;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+    body .send-button {
+      margin-top: 15px;
+    }
+  body .results {
+     color: #fff;
+     margin-right: 10px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     overflow: visible; 
+  }
+  body #footer {
+    font-size: 12px;
+    margin: 50px;
+    margin-top: 70px;
+    margin-left: 160px;
+    text-align: right;
+    color: #404984;
+    float: left;
+    display:inline-block;
+    width: 800px;
+  }
+  div.image {
+   content:url('social-bot-logo.png');
+   width: 4em;
+   height: 4em;
+   margin-top: 53px;
+   margin-right: 200px;
+   float: right;
+  }
+  body .images img {
+      float: left;
+  }
+  body .images {
+      margin-top: 30px;
+      margin-bottom: 30px !important;
+      margin-right: 5px;
+      margin-left: 5px;
+  }
+
+/*# sourceMappingURL=app.css.map */
