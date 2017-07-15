@@ -15,8 +15,8 @@ def getComments(topic, maxpp, num):
     data['comments'] = information
     return json.dumps(data, ensure_ascii=False)
 
-def getCommentsSaveToFile(topic, maxapp, num):
-    data = getComments(topic, maxapp, num)
+def getCommentsSaveToFile(topic, maxpp, num):
+    data = getComments(topic, maxpp, num)
     with open('savedStatus/comments.json', 'w') as f:
         json.dump(data, f)
     #open file
@@ -31,5 +31,31 @@ def getCommentsSaveToFile(topic, maxapp, num):
     #     f.write(json.dumps(data).decode('unicode-escape').encode('utf8'))
     #
     # print('..results added to phpapi/resources/comments.json file.')
+
+    return data
+
+def getUnicodeCommentsSaveToFile(topic, maxpp, num):
+    comments = getComments(topic, maxpp, num)
+
+    data = {};
+    data['topic'] = topic;
+    data['maxpp'] = maxpp;
+    data['num'] = num;
+
+    data['comments'] = comments;
+
+    # open file
+    fh = open('savedStatus/comments.json', 'r')
+    
+    # if file does not exist, create it
+    if not fh:
+        fh = open('savedStatus/comments.json', "w")
+
+    with open('savedStatus/comments.json', 'a') as f:
+        f.write("\n")
+        f.write("\n")
+        f.write(json.dumps(data).decode('unicode-escape').encode('utf8'))
+
+    print('..results added to phpapi/savedStatus/comments.json file.')
 
     return data
