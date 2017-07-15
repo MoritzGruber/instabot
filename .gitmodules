@@ -1,0 +1,3 @@
+[submodule "app/Services/Tasks/InstaPy"]
+	path = app/Services/Tasks/InstaPy
+	url = https://github.com/MoritzGruber/InstaPy.git
