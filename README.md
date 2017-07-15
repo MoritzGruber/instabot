@@ -30,7 +30,7 @@ cd app
 # FOR LINUX ONLY
 bash installwithoutdocker.sh
 
-# REST
+# OR USE
 pip3 install socketIO-client-2
 ```
 
