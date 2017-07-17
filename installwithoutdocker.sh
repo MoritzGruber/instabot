@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# init submodules and update
+git submodule init
+git submodule update
+
+#get dl-links for chrome
 export CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 export CHROMEARM="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
