@@ -84,8 +84,8 @@ pip3 install socketIO-client-2
 
 wget ${CRHOMEDRIVER} \
     && unzip chromedriver_linux64 \
-    && mv chromedriver /usr/bin/chromedriver \
-    && chmod +x /usr/bin/chromedriver
+    && mv chromedriver ./app/assets/chromedriver \
+    && chmod +x ./app/assets/chromedriver
 
 apt-get purge php7.1 -y
 apt-get install php7.0 -y

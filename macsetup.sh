@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+git submodule init
+git submodule update
+#install node
+cd dashboard
+npm install modules
+cd ..
+#install php modules
+cd app/phpapi/
+composer install
+cd ..
+cd ..
+# install python modules
+pip3 install pyvirtualdisplay
+pip3 install selenium
+pip3 install clarifai
+pip3 install emoji
+pip3 install requests
+pip3 install socketIO-client-2
+
+
+#install chromedriver for mac

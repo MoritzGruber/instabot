@@ -1,6 +1,6 @@
 {
-  "username": "praisingofcars",
-  "password": "clubmate123",
+   "username": "someinstagramaccount",
+  "password": "somepassword",
   "amountOfHashtags": 10,
   "topic": "computer",
   "wakeUpHour": 8,
@@ -14,7 +14,5 @@
   "lowerFollowerCount": 2,
   "upperFollowerCount": 400,
   "minBreakAfterATaskInMinutes": 1.00,
-  "maxBreakAfterATaskInMinutes": 60.00,
-  "dashboardIp": "46.101.111.251",
-  "dashboardPort": "8001"
+  "maxBreakAfterATaskInMinutes": 60.00
 }
