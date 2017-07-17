@@ -10,6 +10,9 @@ export CHROMEARM="https://dl.google.com/linux/direct/google-chrome-stable_curren
 export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
 export CRHOMEDRIVERARM="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
 
+locale-gen en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANG=C.UTF-8
 # Environment setup
 apt-get update \
     && apt-get -y upgrade \
@@ -53,14 +56,13 @@ apt-get update \
    && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
    && apt-get -f install
+ln -s /usr/bin/nodejs /usr/bin/node
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
 export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
 
-locale-gen en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANG=C.UTF-8
+
 add-apt-repository ppa:ondrej/php -y
 apt-get install php7.0-curl -y
 apt-get update
