@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-sudo apt install git
-git clone https://github.com/MoritzGruber/InstaPy.git ./instabot/Services/Tasks/InstaPy
 export CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 export CHROMEARM="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip"
@@ -38,8 +36,13 @@ apt-get update \
         libxtst6 \
         fonts-liberation \
         libappindicator1 \
+        build-essential\
+        curl\
+        git\
+        npm \
+        nodejs\
        xdg-utils \
-       git \
+       software-properties-common\
        xvfb\
    && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
@@ -52,7 +55,6 @@ export CRHOMEDRIVER="http://chromedriver.storage.googleapis.com/2.29/chromedrive
 locale-gen en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANG=C.UTF-8
-apt-get install software-properties-common -y
 add-apt-repository ppa:ondrej/php -y
 apt-get install php7.0-curl -y
 apt-get update
@@ -83,7 +85,10 @@ rm -rf /etc/php/7.1/
 apt-get install composer -y
 apt-get install php7.0-curl
 apt-get install php7.0-gd
-cd ./instabot/phpapi/
+cd ./app/phpapi/
 composer install
 cd ..
+cd ..
+cd dashboard
+npm install
 cd ..
