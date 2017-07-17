@@ -6,8 +6,11 @@ require __DIR__.'/vendor/autoload.php';
 /////// CONFIG ///////
 $targetname = $argv[1];
 
-$username = 'praisingofcars';
-$password = 'clubmate123';
+$str = file_get_contents('./../config.json');
+$jsonConfig= json_decode($str, true);
+
+$username = $jsonConfig['username'];
+$password = $jsonConfig['password'];
 $debug = false;
 $truncatedDebug = false;
 //////////////////////

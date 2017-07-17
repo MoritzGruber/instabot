@@ -7,8 +7,11 @@ require __DIR__.'/vendor/autoload.php';
 $topic = $argv[1];
 $maxpp = $argv[2];
 $num = $argv[3];
-$username = 'praisingofcars';
-$password = 'clubmate123';
+$str = file_get_contents('./../config.json');
+$jsonConfig= json_decode($str, true);
+
+$username = $jsonConfig['username'];
+$password = $jsonConfig['password'];
 $debug = false;
 $truncatedDebug = false;
 //////////////////////

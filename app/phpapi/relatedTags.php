@@ -5,10 +5,11 @@ date_default_timezone_set('UTC');
 require __DIR__.'/vendor/autoload.php';
 /////// CONFIG ///////
 
+$str = file_get_contents('./../config.json');
+$jsonConfig= json_decode($str, true);
 
-
-$username = 'praisingofcars';
-$password = 'clubmate123';
+$username = $jsonConfig['username'];
+$password = $jsonConfig['password'];
 $debug = false;
 $truncatedDebug = false;
 //////////////////////
