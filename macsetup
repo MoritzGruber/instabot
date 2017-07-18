@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 git submodule init
 git submodule update
 #install node
 cd dashboard
-npm install modules
+npm install
 cd ..
 #install php modules
 cd app/phpapi/

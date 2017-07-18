@@ -3,6 +3,8 @@ Disclaimer: This whole Application is for educational purposes only.
 ![dashboard-example-image](https://github.com/MoritzGruber/instabot/blob/master/dashboard/dashboard-img.png)
 
 # Setup
+Make sure to get the right chromedriver for your system from [here](https://chromedriver.storage.googleapis.com/index.html?path=2.30/). Put it in app/assets and add a valid instagram account in the config.json.
+
 ## Linux x64 Ubuntu 16.04 LTS
 ```bash
 cd instabot 
@@ -13,9 +15,8 @@ Make sure to put a valid instagram account in the config.json
 Requirements: Python3, Pip3, node, npm, php, php compose, chrome browser
 ```bash
 cd instabot 
-bash macsetup.sh
+./macsetup
 ```
-Make sure to get the right chromedriver for your system from [here](https://chromedriver.storage.googleapis.com/index.html?path=2.30/). Just put it in app/assets and put a valid instagram account in the config.json
 # Dashboard 
 
 The Dashboard consists of 3 parts

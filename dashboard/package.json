@@ -8,7 +8,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "^4.15.3",
+    "modules": "^0.4.0",
     "socket.io": "^1.7.3"
   },
   "author": "Moirtz Gruber",
