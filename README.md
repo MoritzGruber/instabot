@@ -22,13 +22,13 @@ cd instabot
 
 The Dashboard consists of 3 parts
 * Website (Dashboard GUI)
-* Nodejs server
+* Node.js server
 * Python Remote Executer
 
 Running on port localhost:3000
 
 ### Run 
-NodeJS Server:
+Node.js Server:
 ```bash
 cd dashboard
 node index.js
@@ -186,7 +186,7 @@ To configure the project change the example config file (./config.json)
 ```
 
 # FAQ
-* What meens: checkpoint_required response? -> Account blocked, login manually and unlock it with sms code.
+* What means: checkpoint_required response? -> Account blocked, login manually and unlock it with sms code.
 
 Licence MIT
 
