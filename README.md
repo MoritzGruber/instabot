@@ -1,5 +1,6 @@
 # Instabot
 Disclaimer: The whole Application is for educational purposes only.
+
 ![dashboard-example-image](https://github.com/MoritzGruber/instabot/blob/master/dashboard/dashboard-img.png)
 
 # Setup
